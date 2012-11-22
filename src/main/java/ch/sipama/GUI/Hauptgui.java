@@ -68,7 +68,9 @@ public class Hauptgui {
 		
 		//Menü 'Datei' mit den Befehle 'Öffnen', 'Speichern' und 'Beenden'
 		JMenu dateiMenu = new JMenu("Datei");
+		JMenu hilfeMenu = new JMenu("Hilfe");
 		bar.add(dateiMenu);
+		bar.add(hilfeMenu);
 		
 		//Menüpunkte erstellen und hinzufügen
 		JMenuItem oeffnen = new JMenuItem("Öffnen...");
@@ -77,6 +79,11 @@ public class Hauptgui {
 		dateiMenu.add(speichern);
 		JMenuItem beenden = new JMenuItem("Beenden");
 		dateiMenu.add(beenden);
+		
+		JMenuItem hilfe = new JMenuItem("Anleitung");
+		hilfeMenu.add(hilfe);
+		JMenuItem ueber = new JMenuItem("Über...");
+		hilfeMenu.add(ueber);
 		
 		//Action-Listener für die Menüpunkte
 		oeffnen.addActionListener(new ActionListener(){
@@ -106,6 +113,26 @@ public class Hauptgui {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				beenden();
+			}
+			
+		});
+		
+		hilfe.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		ueber.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				
 			}
 			
 		});

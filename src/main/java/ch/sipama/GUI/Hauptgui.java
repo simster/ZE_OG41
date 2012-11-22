@@ -2,9 +2,13 @@ package ch.sipama.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -117,11 +121,12 @@ public class Hauptgui {
 			
 		});
 		
+		//Oeffnet unsere Wiki-Seite
 		hilfe.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+				ladeURL("https://github.com/simster/ZE_OG41/wiki"); 
 				
 			}
 			
@@ -150,6 +155,17 @@ public class Hauptgui {
 		}
 	}
 	
+	
+	//Oeffnet den Standardbrowser des Benutzers
+	private void ladeURL(String seite) { 
+        try { 
+            Desktop.getDesktop().browse(new URI(seite)); 
+        } catch (IOException e) { 
+            e.printStackTrace(); 
+        } catch (URISyntaxException e) { 
+            e.printStackTrace(); 
+        } 
+    } 
 	
 	
 

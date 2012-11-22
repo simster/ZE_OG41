@@ -68,6 +68,7 @@ public class Hauptgui {
 		
 		//Menü 'Datei' mit den Befehle 'Öffnen', 'Speichern' und 'Beenden'
 		JMenu dateiMenu = new JMenu("Datei");
+		bar.add(dateiMenu);
 		
 		//Menüpunkte erstellen und hinzufügen
 		JMenuItem oeffnen = new JMenuItem("Öffnen...");

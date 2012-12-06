@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 
 public class Tabellen_Gui extends JPanel {
 
@@ -23,15 +24,25 @@ public class Tabellen_Gui extends JPanel {
 				"End-Zeit", "Dauer" };
 
 		Object[][] data = {
-				{ "Silberfuchs", "Hans", "19:15", "22:00", "23.05.2012" },
-				{ "Silberfuchs", "Hans", "19:15", "22:00", "23.05.2012" } };
+				{ "Silberfuchs", "Hans55", "19:15", "22:00", "165" },
+				{ "Ikarus", "Urs99", "19:00", "22:15", "195" } };
 
 		JTable table = new JTable(data, columnNames);
-		table.setPreferredScrollableViewportSize(new Dimension(500, 370));
+		table.setPreferredScrollableViewportSize(new Dimension(600, 300));
 		table.setLayout(new FlowLayout());
 		table.setFillsViewportHeight(true);
 
 		JScrollPane scrollPane = new JScrollPane(table);
+		
+		TableColumn column = null;
+		for (int i = 0; i < 4; i++) {
+		    column = table.getColumnModel().getColumn(i);
+		    if (i == 2 && i==3) {
+		        column.setPreferredWidth(60); //third column is bigger
+		    } else {
+		        column.setPreferredWidth(150);
+		    }
+		}
 
 		// layout.putConstraint(SpringLayout.NORTH, table, 30,
 		// SpringLayout.NORTH,

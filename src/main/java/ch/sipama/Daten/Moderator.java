@@ -11,6 +11,7 @@ public class Moderator implements Serializable{
 	private String skypenick;
 	private String server;
 	
+	
 	//Konstruktor um einen neuen Datensatz für einen Moderator zu erstellen
 	public Moderator(String name, String forennick, String skypenick, String server){
 		this.name = name;

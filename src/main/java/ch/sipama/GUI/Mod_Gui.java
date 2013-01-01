@@ -4,9 +4,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
-
 import ch.sipama.Daten.ModListe;
 
 public class Mod_Gui extends JPanel {

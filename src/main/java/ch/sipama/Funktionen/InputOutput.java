@@ -35,7 +35,7 @@ public class InputOutput {
 	}
 
 	
-	public List<Moderator> deserialize() throws IOException,ClassNotFoundException {
+	public List<Moderator> deserialize() throws IOException, ClassNotFoundException {
 		
 		// creates the file input and the object input stream
 		FileInputStream fis = new FileInputStream(pfad);

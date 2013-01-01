@@ -32,11 +32,12 @@ public class Hauptgui {
 	//Instanzvariablen
 	private JFrame frame;
 	private Container contentPane;
-
+	
 	
 	//Defaultkonstruktor
 	public Hauptgui(){
 		System.out.println("Start");
+		
 		createFrame();
 	}
 	

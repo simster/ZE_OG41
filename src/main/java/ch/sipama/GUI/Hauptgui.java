@@ -36,7 +36,7 @@ public class Hauptgui {
 	
 	//Defaultkonstruktor
 	public Hauptgui(){
-		System.out.println("Start");
+//		System.out.println("Start");
 		
 		createFrame();
 	}

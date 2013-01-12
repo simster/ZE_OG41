@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class StringDurchsuchen {
 
-	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/src/main/java/ch/sipama/Daten/quelltext.txt");// Pfad
+	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltextMuster.txt");// Pfad
 
 	// muss
 	// noch

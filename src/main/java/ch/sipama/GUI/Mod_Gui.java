@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
+
 import javax.swing.*;
 import ch.sipama.Daten.ModListe;
 
@@ -21,15 +23,36 @@ public class Mod_Gui extends JPanel {
 		SpringLayout layout = new SpringLayout();
 		this.setLayout(layout);
 
+		//Die Daten der Tabelle
+		Vector<Vector<String>> daten = new Vector<Vector<String>>();
+		
+		for(int i=0; i < ModListe.getInstance().getModListe().size(); i++){
+			Vector<String> zeile = new Vector<String>();
+			zeile.add(ModListe.getInstance().getModListe().get(0).getServer());
+			zeile.add(ModListe.getInstance().getModListe().get(0).getName());
+			zeile.add(ModListe.getInstance().getModListe().get(0).getForennick());
+			zeile.add(ModListe.getInstance().getModListe().get(0).getSkypenick());	
+			daten.add(zeile);	
+			
+		}
+		
+		//Die Titel der Tabellenspalten
+		Vector<String> spaltentitel = new Vector<String>();
+			spaltentitel.add("Server");
+			spaltentitel.add("Name");
+			spaltentitel.add("Forennick");
+			spaltentitel.add("Skypenick");
+		
+		
 		
 
-		String[] spaltentitel={"Server", "Name", "Forennick", "Skypenick"};
+	//	String[] spaltentitel={"Server", "Name", "Forennick", "Skypenick"};
 		
-		Object[][] daten = {
-					{ModListe.getInstance().getModListe().get(0).getServer(), ModListe.getInstance().getModListe().get(0).getName(), ModListe.getInstance().getModListe().get(0).getForennick(), ModListe.getInstance().getModListe().get(0).getSkypenick()},
-					{ModListe.getInstance().getModListe().get(1).getServer(), ModListe.getInstance().getModListe().get(1).getName(), ModListe.getInstance().getModListe().get(1).getForennick(), ModListe.getInstance().getModListe().get(1).getSkypenick()}
-				};
-		
+//		Object[][] daten = {
+//					{ModListe.getInstance().getModListe().get(0).getServer(), ModListe.getInstance().getModListe().get(0).getName(), ModListe.getInstance().getModListe().get(0).getForennick(), ModListe.getInstance().getModListe().get(0).getSkypenick()},
+//					{ModListe.getInstance().getModListe().get(1).getServer(), ModListe.getInstance().getModListe().get(1).getName(), ModListe.getInstance().getModListe().get(1).getForennick(), ModListe.getInstance().getModListe().get(1).getSkypenick()}
+//				};
+//		
 		modTab = new JTable(daten, spaltentitel);
 		modTab.setPreferredScrollableViewportSize(new Dimension(500,300));
 		modTab.setLayout(new FlowLayout());

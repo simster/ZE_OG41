@@ -7,6 +7,8 @@ import java.awt.FlowLayout;
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 
+import ch.sipama.Daten.ModListe;
+
 public class Tabellen_Gui extends JPanel {
 
 	// Instanzvariablen
@@ -24,8 +26,8 @@ public class Tabellen_Gui extends JPanel {
 				"End-Zeit", "Dauer" };
 
 		Object[][] data = {
-				{ "Silberfuchs", "Hans55", "19:15", "22:00", "165" },
-				{ "Ikarus", "Urs99", "19:00", "22:15", "195" } };
+				{ "Silberfuchs", ModListe.getInstance().getModListe().get(0).getName(), "19:15", "22:00", "165" },
+				{ "Ikarus", ModListe.getInstance().getModListe().get(1).getName(), "19:00", "22:15", "195" } };
 
 		JTable table = new JTable(data, columnNames);
 		table.setPreferredScrollableViewportSize(new Dimension(600, 300));
@@ -44,16 +46,7 @@ public class Tabellen_Gui extends JPanel {
 		    }
 		}
 
-		// layout.putConstraint(SpringLayout.NORTH, table, 30,
-		// SpringLayout.NORTH,
-		// this);
-		// layout.putConstraint(SpringLayout.WEST, table, 50, SpringLayout.WEST,
-		// this);
-		//
-		// layout.putConstraint(SpringLayout.NORTH, table.getTableHeader(), 10,
-		// SpringLayout.NORTH, this);
-		// layout.putConstraint(SpringLayout.WEST, table.getTableHeader(), 50,
-		// SpringLayout.WEST, this);
+		
 
 		layout.putConstraint(SpringLayout.NORTH, scrollPane, 5,
 				SpringLayout.NORTH, this);

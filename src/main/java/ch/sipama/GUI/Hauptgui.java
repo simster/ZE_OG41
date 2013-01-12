@@ -56,6 +56,7 @@ public class Hauptgui {
 		JTabbedPane tabbedPane = new JTabbedPane();
 		tabbedPane.addTab("Moderatoren", new Mod_Gui());
 		tabbedPane.addTab("Zeittabellen", new Tabellen_Gui());
+		tabbedPane.addTab("Quelltext", new Auslesen_Gui());
 		
 		//TabbedPane in den Rahmen einfügen
 		contentPane = frame.getContentPane();

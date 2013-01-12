@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 
 public class StrategyAusfuehren {
 	
+	private URLAuslesenFile urlAuslesenFile;
+	private URLAuslesen urlAuslesen;
 	private Strategy strategy;
 	
 	public StrategyAusfuehren() throws IOException {
@@ -26,13 +28,13 @@ public class StrategyAusfuehren {
 	
 	public void setStrategy(String i) {
 		
-		if (i == "1") {
-			strategy = new URLAuslesenFile() {
-			};
-		} else {
-			strategy = new URLAuslesen() {
-			};
-		}
+//		if (i == "1") {
+//			strategy = urlAuslesenFile.auslesen() {
+//			};
+//		} else {
+//			strategy = new URLAuslesen() {
+//			};
+//		}
 		
 	}
 	

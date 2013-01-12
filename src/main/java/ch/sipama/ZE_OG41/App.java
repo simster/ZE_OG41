@@ -19,6 +19,5 @@ public class App
         System.out.println("Ich teste auch noch.");
         
         new Hauptgui();
-        new StrategyAusfuehren();
     }
 }

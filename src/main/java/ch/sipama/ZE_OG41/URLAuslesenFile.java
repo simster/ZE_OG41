@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 
-public abstract class URLAuslesenFile implements Strategy {
+public abstract class URLAuslesenFile {
 
-	@Override
 	public void auslesen() throws Exception {
-
+		
+		System.out.println("URLAuslesenFile");
 		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
 		FileOutputStream fos = null;
 		fos = new FileOutputStream("quelltext.txt");

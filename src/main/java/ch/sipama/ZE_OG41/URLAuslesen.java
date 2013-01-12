@@ -5,12 +5,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public abstract class URLAuslesen implements Strategy {
+public abstract class URLAuslesen {
 
-
-	@Override
 	public void auslesen() throws Exception {
-
+		
+		System.out.println("URLAuslesen");
 		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
 		InputStream in = url.openStream();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));

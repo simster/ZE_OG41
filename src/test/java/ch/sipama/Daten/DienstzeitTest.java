@@ -13,7 +13,7 @@ public class DienstzeitTest {
 	
 	@Test
 	public void dienstzeitClassTest(){
-		Dienstzeit testDienstzeit = new Dienstzeit(1234, 3456, ModListe.getInstance().getModListe().get(0));
+		testDienstzeit = new Dienstzeit(1234, 3456, ModListe.getInstance().getModListe().get(0));
 	}
 	
 	

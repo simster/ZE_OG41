@@ -1,5 +1,4 @@
 package ch.sipama.Daten;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class ModListe implements Serializable{
 	private ModListe(){
 		
 		//ArryListe für die einzelnen Moderatoren erstellen
-		setModListe(new ArrayList<Moderator>());
+		modListe = new ArrayList<Moderator>();
 		
 		//Der Liste zwei Testdatensätze hinzufügen
 		modListe.add(new Moderator("Name1", "Forennick1", "Skypenick1", "Server1"));

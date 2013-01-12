@@ -11,7 +11,7 @@ public class ModeratorTest {
 	//Das Erstellen einer Moderator-Klasse testen
 	@Test
 	public void modClassTest(){
-		Moderator test = new Moderator("Name", "Forennick", "Skypenick", "Server");
+		testMod = new Moderator("Name", "Forennick", "Skypenick", "Server");
 	}
 	
 	

@@ -12,21 +12,30 @@ import java.io.IOException;
 
 public class StringDurchsuchen {
 
-	final static String urlString = ("quelltext.txt");// Pfad muss noch mit Patrizia bestimmt werden
+	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/src/main/java/ch/sipama/Daten/quelltext.txt");// Pfad
 
-	public void attributeAuslesen() throws FileNotFoundException{
-try{
-		BufferedReader bReader = new BufferedReader(new FileReader(urlString));
+	// muss
+	// noch
+	// mit
+	// Patrizia
+	// bestimmt
+	// werden
 
-		String sZeile = bReader.readLine();
-		while (sZeile != null) 
-		{
-			sZeile = bReader.readLine();
+	public void attributeAuslesen() throws FileNotFoundException {
+		try {
+			BufferedReader bReader = new BufferedReader(new FileReader(
+					urlString));
 
-			System.out.println(sZeile);
+			String sZeile = bReader.readLine();
+			while (sZeile != null) {
+				sZeile = bReader.readLine();
 
+				if (sZeile.contains("Moderator")) {
+					System.out.println(sZeile);
+				}
+			}
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
 		}
-	} catch(IOException ioe){
-		 ioe.printStackTrace();
 	}
-}}
+}

@@ -2,9 +2,14 @@ package ch.sipama.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.ObjectOutputStream;
+import java.net.URL;
+
 import javax.swing.*;
-import ch.sipama.ZE_OG41.URLAuslesen;
-import ch.sipama.ZE_OG41.URLAuslesenFile;
 
 /**
  * Auslesen Gui Class
@@ -15,8 +20,8 @@ public class Auslesen_Gui extends JPanel {
 
 	//Instanzvariablen
 	private static final long serialVersionUID = 1L;
-	private URLAuslesen urlAuslesen;
-	private URLAuslesenFile urlAuslesenFile;
+//	private URLAuslesen urlAuslesen;
+//	private URLAuslesenFile urlAuslesenFile;
 
 	public Auslesen_Gui() {
 
@@ -74,10 +79,35 @@ public class Auslesen_Gui extends JPanel {
 	}
 	
 	public void auslesen() throws Exception {
-		urlAuslesen.auslesen();
+		
+//		urlAuslesen.auslesen();
+//		System.out.println("URLAuslesen");
+		System.out.println("");
+		System.out.println("************** URL auslesen **************");
+		System.out.println("");
+		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
+		InputStream in = url.openStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		String s;
+		while ((s = reader.readLine()) != null) {
+			System.out.println(s);
+
+		}
 	}
 	
 	public void auslesenFile() throws Exception {
-		urlAuslesenFile.auslesen();
+		
+//		urlAuslesenFile.auslesen();
+		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
+		FileOutputStream fos = null;
+		fos = new FileOutputStream("quelltext.txt");
+		ObjectOutputStream oos = null;
+		oos = new ObjectOutputStream(fos);
+		InputStream in = url.openStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		String s;
+		while ((s = reader.readLine()) != null) {
+			oos.writeObject(s);
+		}
 	}
 }

@@ -8,7 +8,8 @@ import java.net.URL;
 import ch.sipama.Funktionen.Log;
 
 public class URLAuslesen {
-
+	
+	//Methode zum Auslesen des Quelltextes und auf der Konsole ausgeben
 	public void auslesen() throws Exception {
 		
 		Log.getInstance().getLogger().info("Quelltext auf Konsole ausgeben:");

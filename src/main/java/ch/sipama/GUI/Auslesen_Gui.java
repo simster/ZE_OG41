@@ -104,7 +104,7 @@ public class Auslesen_Gui extends JPanel {
 		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
 //		WebsiteLogin.login();
 		FileOutputStream fos = null;
-		fos = new FileOutputStream("quelltext.txt");
+		fos = new FileOutputStream(".\\docs\\quelltexte\\quelltext.txt");
 		ObjectOutputStream oos = null;
 		oos = new ObjectOutputStream(fos);
 		InputStream in = url.openStream();

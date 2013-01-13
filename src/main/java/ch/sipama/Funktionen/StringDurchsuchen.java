@@ -6,20 +6,15 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /*
- * Marco 12.1.13
+ * @author Marco 
+ * 12.1.13
  * Methode um URL-String aus URLAuslesenFile.java zu durchsuchen
  */
 
 public class StringDurchsuchen {
 
-	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltextMuster.txt");// Pfad
-
-	// muss
-	// noch
-	// mit
-	// Patrizia
-	// bestimmt
-	// werden
+	// Pfad muss noch mit Patrizia bestimmt werden
+	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltextMuster.txt");
 
 	public void attributeAuslesen() throws FileNotFoundException {
 		try {

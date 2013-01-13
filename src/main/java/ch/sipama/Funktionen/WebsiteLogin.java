@@ -4,16 +4,15 @@ import org.apache.commons.httpclient.Cookie;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 
-
-
-public class WebsiteLogin {
-	public static void main(String args[]) throws Exception {  
+public class WebsiteLogin {	
+	
+	public static void login() throws Exception {  
 
 		HttpClient client = new HttpClient();  
-		client.getParams().setParameter("vb_login_username", "Programmierklasse");  
+		client.getParams().setParameter("vb_login_username", "Programmierklasse");
 		client.getParams().setParameter("vb_login_password", "987654");
 
-		GetMethod method = new GetMethod("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!:8080/");  
+		GetMethod method = new GetMethod("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");  
 		try{  
 			client.executeMethod(method);  
 			Cookie[] cookies = client.getState().getCookies();  

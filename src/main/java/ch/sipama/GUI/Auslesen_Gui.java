@@ -11,6 +11,8 @@ import java.net.URL;
 
 import javax.swing.*;
 
+import ch.sipama.Funktionen.WebsiteLogin;
+
 /**
  * Auslesen Gui Class
  * @author Patrizia Dreyer
@@ -86,6 +88,7 @@ public class Auslesen_Gui extends JPanel {
 		System.out.println("************** URL auslesen **************");
 		System.out.println("");
 		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
+//		WebsiteLogin.login();
 		InputStream in = url.openStream();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 		String s;
@@ -99,6 +102,7 @@ public class Auslesen_Gui extends JPanel {
 		
 //		urlAuslesenFile.auslesen();
 		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
+//		WebsiteLogin.login();
 		FileOutputStream fos = null;
 		fos = new FileOutputStream("quelltext.txt");
 		ObjectOutputStream oos = null;

@@ -19,6 +19,8 @@ public class ModListe implements Serializable{
 		//Der Liste zwei Testdatensätze hinzufügen
 		modListe.add(new Moderator("Name1", "Forennick1", "Skypenick1", "Server1"));
 		modListe.add(new Moderator("Name2", "Forennick2", "Skypenick2", "Server2"));
+		modListe.add(new Moderator("Name3", "Forennick3", "Skypenick3", "Server2"));
+		modListe.add(new Moderator("Name4", "Forennick4", "Skypenick4", "Server1"));
 	}
 	
 	

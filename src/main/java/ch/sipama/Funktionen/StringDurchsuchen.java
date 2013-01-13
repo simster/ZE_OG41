@@ -14,7 +14,7 @@ import java.io.IOException;
 public class StringDurchsuchen {
 
 	// Pfad muss noch mit Patrizia bestimmt werden
-	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltexte/quelltext.txt");
+	final static String urlString = ("C:/Users/marcolamm/Documents/GitHub/ZE_OG41/docs/quelltexte/quelltext.txt");
 
 	public void attributeAuslesen() throws FileNotFoundException {
 		try {
@@ -25,12 +25,15 @@ public class StringDurchsuchen {
 			while (sZeile != null) {
 				sZeile = bReader.readLine();
 
-				if (sZeile.contains("Moderator")) {
+				if (sZeile.contains("blockfoot actionbuttons")) {
 					System.out.println(sZeile);
+				} else {
+//					System.out.println("Enthält gesuchten String NICHT!");
 				}
 			}
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
 	}
+
 }

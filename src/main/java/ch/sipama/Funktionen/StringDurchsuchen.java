@@ -14,7 +14,7 @@ import java.io.IOException;
 public class StringDurchsuchen {
 
 	// Pfad muss noch mit Patrizia bestimmt werden
-	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltextMuster.txt");
+	final static String urlString = ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltexte/quelltext.txt");
 
 	public void attributeAuslesen() throws FileNotFoundException {
 		try {

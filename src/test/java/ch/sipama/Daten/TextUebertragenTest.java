@@ -4,6 +4,7 @@ package ch.sipama.Daten;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.BeforeClass;
+import org.junit.Test;
 /**
  * @author  dreyepat
  */
@@ -16,7 +17,8 @@ public class TextUebertragenTest {
 		textUebert = new TextUebertragen();
 	}
 
+	@Test
     public void testGibEingabe() {
-    	assertEquals(textUebert.gibEingabe(), "Test Text");
+    	assertEquals(textUebert.gibEingabe(), "test, text");
     }
 }

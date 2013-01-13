@@ -8,10 +8,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.net.URL;
-
 import javax.swing.*;
-
 import ch.sipama.Funktionen.WebsiteLogin;
+import ch.sipama.ZE_OG41.URLAuslesen;
 
 /**
  * Auslesen Gui Class
@@ -22,7 +21,7 @@ public class Auslesen_Gui extends JPanel {
 
 	//Instanzvariablen
 	private static final long serialVersionUID = 1L;
-//	private URLAuslesen urlAuslesen;
+	private URLAuslesen urlAuslesen;
 //	private URLAuslesenFile urlAuslesenFile;
 
 	public Auslesen_Gui() {
@@ -30,6 +29,8 @@ public class Auslesen_Gui extends JPanel {
 		//Layout für diesen Tab setzen
 		SpringLayout layout = new SpringLayout();
 		this.setLayout(layout);
+		urlAuslesen = new URLAuslesen();
+		
 		
 		//Label erstellen
 		JLabel fileSpeichern = new JLabel("Quelltext in File speichern: ");
@@ -82,20 +83,20 @@ public class Auslesen_Gui extends JPanel {
 	
 	public void auslesen() throws Exception {
 		
-//		urlAuslesen.auslesen();
-//		System.out.println("URLAuslesen");
-		System.out.println("");
-		System.out.println("************** URL auslesen **************");
-		System.out.println("");
-		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
-//		WebsiteLogin.login();
-		InputStream in = url.openStream();
-		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-		String s;
-		while ((s = reader.readLine()) != null) {
-			System.out.println(s);
-
-		}
+		urlAuslesen.auslesen();
+////		System.out.println("URLAuslesen");
+//		System.out.println("");
+//		System.out.println("************** URL auslesen **************");
+//		System.out.println("");
+//		URL url = new URL("http://forum.operationgamma41.de/showthread.php?1228-Erfassung-der-Moderationszeiten-!");
+////		WebsiteLogin.login();
+//		InputStream in = url.openStream();
+//		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+//		String s;
+//		while ((s = reader.readLine()) != null) {
+//			System.out.println(s);
+//
+//		}
 	}
 	
 	public void auslesenFile() throws Exception {

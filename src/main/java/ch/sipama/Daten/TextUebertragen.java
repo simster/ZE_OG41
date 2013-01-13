@@ -20,7 +20,7 @@ public class TextUebertragen
 
         String[] wortArray = eingabezeile.split(" ");
         
-        // Wörter aus dem Array in das Hashset einfügen
+        // WÃ¶rter aus dem Array in das Hashset einfÃ¼gen
         HashSet<String> woerter = new HashSet<String>();
         for(String wort : wortArray) {
             woerter.add(wort);

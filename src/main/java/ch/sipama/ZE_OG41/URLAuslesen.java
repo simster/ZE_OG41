@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-public abstract class URLAuslesen {
+public class URLAuslesen {
 
 	public void auslesen() throws Exception {
 		

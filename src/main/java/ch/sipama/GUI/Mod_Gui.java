@@ -5,17 +5,15 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
 import javax.swing.*;
 import ch.sipama.Daten.ModListe;
 
 public class Mod_Gui extends JPanel {
 
 	//Instanzvariablen
-//	private DefaultListModel<String> listModel;
-//	final JList<String> listMods;
 	private static final long serialVersionUID = 1L;
 	private JTable modTab;
+	private JButton btnLoeschen;
 
 	public Mod_Gui() {
 
@@ -28,10 +26,10 @@ public class Mod_Gui extends JPanel {
 		
 		for(int i=0; i < ModListe.getInstance().getModListe().size(); i++){
 			Vector<String> zeile = new Vector<String>();
-			zeile.add(ModListe.getInstance().getModListe().get(0).getServer());
-			zeile.add(ModListe.getInstance().getModListe().get(0).getName());
-			zeile.add(ModListe.getInstance().getModListe().get(0).getForennick());
-			zeile.add(ModListe.getInstance().getModListe().get(0).getSkypenick());	
+			zeile.add(ModListe.getInstance().getModListe().get(i).getServer());
+			zeile.add(ModListe.getInstance().getModListe().get(i).getName());
+			zeile.add(ModListe.getInstance().getModListe().get(i).getForennick());
+			zeile.add(ModListe.getInstance().getModListe().get(i).getSkypenick());	
 			daten.add(zeile);	
 			
 		}
@@ -44,15 +42,6 @@ public class Mod_Gui extends JPanel {
 			spaltentitel.add("Skypenick");
 		
 		
-		
-
-	//	String[] spaltentitel={"Server", "Name", "Forennick", "Skypenick"};
-		
-//		Object[][] daten = {
-//					{ModListe.getInstance().getModListe().get(0).getServer(), ModListe.getInstance().getModListe().get(0).getName(), ModListe.getInstance().getModListe().get(0).getForennick(), ModListe.getInstance().getModListe().get(0).getSkypenick()},
-//					{ModListe.getInstance().getModListe().get(1).getServer(), ModListe.getInstance().getModListe().get(1).getName(), ModListe.getInstance().getModListe().get(1).getForennick(), ModListe.getInstance().getModListe().get(1).getSkypenick()}
-//				};
-//		
 		modTab = new JTable(daten, spaltentitel);
 		modTab.setPreferredScrollableViewportSize(new Dimension(500,300));
 		modTab.setLayout(new FlowLayout());
@@ -61,24 +50,8 @@ public class Mod_Gui extends JPanel {
 		JScrollPane scrollPane = new JScrollPane(modTab);
 		
 		
-//		//Default List Model Objekt erstellen
-//		listModel = new DefaultListModel<String>();
-//
-//		//Jeden Moderator aus der ArrayListe dem ListModel hinzufügen
-//		for(int i=0; i< ModListe.getInstance().getModListe().size(); i++){
-//			String bezeichnung = ModListe.getInstance().getModListe().get(i).getServer() + " " + ModListe.getInstance().getModListe().get(i).getName();
-//			listModel.add(i, bezeichnung);
-//		}
-//
-//		//Liste fürs Gui erstellen
-//		listMods = new JList<String>(listModel);
-//		listMods.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//		listMods.setSelectedIndex(0);
-//		listMods.setVisibleRowCount(8);
-//		JScrollPane listScrollPane = new JScrollPane(listMods);
-//
-//		//Liste dem GUI hinzufügen
-//		this.add(listScrollPane);
+
+		//Liste dem GUI hinzufügen
 		this.add(scrollPane);
 		
 		
@@ -99,7 +72,7 @@ public class Mod_Gui extends JPanel {
 			}
 		});
 				
-		JButton btnLoeschen = new JButton("Löschen");
+		btnLoeschen = new JButton("Löschen");
 		btnLoeschen.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
@@ -130,6 +103,9 @@ public class Mod_Gui extends JPanel {
 	
 	//Neuen Mod der ModListe hinzufügen
 	public void modErfassen(){
+		
+		
+		
 
 	}
 
@@ -140,10 +116,11 @@ public class Mod_Gui extends JPanel {
 		
 	//Daten von einem Mod löschen
 	public void modLoeschen(){
-//		if(JOptionPane.showConfirmDialog(this, "Möchten Sie die Daten dieses Moderators wirklich endgültig löschen?", "Warnhinweis", JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION){
-//			ModListe.getInstance().getModListe().remove(listMods.getSelectedIndex());
-//		}
-//		refreshListe();
+		int size = modTab.getRowCount();
+		
+		
+		btnLoeschen.setEnabled(size > 1);
+		
 	}
 	
 	//Liste mit den Moderatoren im GUI aktualisieren

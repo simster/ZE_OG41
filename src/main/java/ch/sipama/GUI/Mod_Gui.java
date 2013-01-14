@@ -113,7 +113,7 @@ public class Mod_Gui extends JPanel {
 
 	//Neuen Mod der ModListe hinzufügen
 	public void modErfassen(){
-
+		new NeuerMod(Mod_Gui.this);
 
 
 
@@ -131,8 +131,8 @@ public class Mod_Gui extends JPanel {
 		//in einem Input-Dialog die Nummer des Moderators abfragen, der gelöscht werden soll
 		String nummer = JOptionPane.showInputDialog("Trage die Nummer des Moderators ein, der gelöscht werden soll!");
 
+		//Den String aus dem Dialogfenster in eine Zahl umwandeln (versuchen):
 		try{
-
 			int nr = Integer.parseInt(nummer);
 			if(nr==0 || nr> size){
 				loeschenAbbrechen();
@@ -151,17 +151,15 @@ public class Mod_Gui extends JPanel {
 				model.removeRow(nr);
 
 				//Moderatoren neu durchnummerieren
-				if(size>1){
-					for(int i=0; i < size-1; i++){
-						model.setValueAt(i+1, i, 0); 
-					}
+				for(int i=0; i < size-1; i++){
+					model.setValueAt(i+1, i, 0); 
 				}
 
 				//Löschen-Button inaktiv setzen, wenn alle Moderatoren gelöscht wurden
 				btnLoeschen.setEnabled(size > 1);
 			}
 
-		//Falls keine Zahl eingetragen wurde im Textfeld:
+			//Falls keine Zahl eingetragen wurde im Textfeld:
 		} catch(NumberFormatException ex){
 			loeschenAbbrechen();
 		}
@@ -170,9 +168,15 @@ public class Mod_Gui extends JPanel {
 
 	}
 
+
+	//Falls keine Zahl eingegeben wurde im Textfeld oder eine, welche nicht mit der Liste übereinstimmt, wird
+	//der Löschvorgang abgebrochen
 	public void loeschenAbbrechen(){
+
+		//Log-Eintrag, dass das Löschen abgebrochen werden muss.
 		Log.getInstance().getLogger().error("Im Textfeld wurde nicht die Nummer des Moderators eingetragen!");
 
+		//Dialogfenster für den Benutzer mit dem entsprechenden Hinweis:
 		JOptionPane.showMessageDialog(null,
 				"Im Textfeld muss die Nummer des Moderators eingetragen werden!",
 				"Warnung",                                       

@@ -21,6 +21,7 @@ public class Auslesen_Gui extends JPanel {
 	private URLAuslesen urlAuslesen;
 	private URLAuslesenFile urlAuslesenFile;
 	private URLAuslesenArea urlAuslesenArea;
+	private JTextArea textArea;
 
 	public Auslesen_Gui() {
 
@@ -36,6 +37,15 @@ public class Auslesen_Gui extends JPanel {
 		JLabel fileSpeichern = new JLabel("Quelltext in File speichern: ");
 		JLabel textKonsole = new JLabel("Quelltext auf Konsole ausgeben: ");
 		JLabel textInFeld = new JLabel("Quelltext unten ausgeben: ");
+		
+		//Textfeld erstellen
+				textArea = new JTextArea();
+				
+				textArea.setColumns(50);
+		        textArea.setLineWrap(true);
+		        textArea.setRows(10);
+				
+				JScrollPane scrollPane = new JScrollPane(textArea);
 		
 		//Buttons und dazugehörige ActionListener erstellen
 		JButton inFileSpeichern = new JButton("File erstellen");
@@ -63,27 +73,20 @@ public class Auslesen_Gui extends JPanel {
 		});
 		
 		JButton untenAusgeben = new JButton("Textfeld");
-		auslesenKon.addActionListener(new ActionListener() {
+		untenAusgeben.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					auslesenFeld();
+					String variable = "" + auslesenFeld();
+					textArea.setText(variable);
+					
 				} catch (Exception exc) {
 					exc.printStackTrace();
 				}
 			}
 		});
 		
-		//Textfeld erstellen
-		JTextArea textArea = new JTextArea();
 		
-		textArea.setColumns(50);
-        textArea.setLineWrap(true);
-        textArea.setRows(10);
-//        textArea.setText(urlAuslesenArea.getQuelltext());
-        textArea.setEditable(false);
-		
-		JScrollPane scrollPane = new JScrollPane(textArea);
 
 		//Buttons und Label dem Gui hinzufügen
 		this.add(fileSpeichern);
@@ -126,8 +129,8 @@ public class Auslesen_Gui extends JPanel {
 
 	}
 	
-public void auslesenFeld() throws Exception {
+	public String auslesenFeld() throws Exception {
 		
-		urlAuslesenArea.getQuelltext();
+		return urlAuslesenArea.auslesen();
 	}
 }

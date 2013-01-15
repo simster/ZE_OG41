@@ -1,13 +1,20 @@
 package ch.sipama.Daten;
 
+/**
+ * @author Marco
+ */
+
+
 public class Dienstzeit {
-	
+
+	//Instanzvariablen
 	private long startzeit;
 	private long endzeit;
 	private long dauer;
 	private Moderator mod;
-	
-	
+
+
+	//Konstruktor
 	public Dienstzeit(long startzeit, long endzeit, Moderator mod){
 		this.startzeit = startzeit;
 		this.endzeit = endzeit;
@@ -16,6 +23,7 @@ public class Dienstzeit {
 	}
 
 
+	//Setter und Getter der einzelnen Instanzvariablen
 	public long getStartzeit() {
 		return startzeit;
 	}

@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import ch.sipama.Daten.ModListe;
 import ch.sipama.Funktionen.InputOutput;
+import ch.sipama.Funktionen.Log;
 
 
 /**
@@ -36,8 +37,6 @@ public class Hauptgui {
 	
 	//Defaultkonstruktor
 	public Hauptgui(){
-//		System.out.println("Start");
-		
 		createFrame();
 	}
 	
@@ -96,6 +95,7 @@ public class Hauptgui {
 		JMenuItem ueber = new JMenuItem("Über...");
 		hilfeMenu.add(ueber);
 		
+		
 		//Action-Listener für die Menüpunkte
 		//Lädt die in einem File gespeicherten Daten der Moderatoren
 		oeffnen.addActionListener(new ActionListener(){
@@ -133,7 +133,7 @@ public class Hauptgui {
 		ueber.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
+				new Ueber_GUI();
 			}
 		});
 	}
@@ -144,6 +144,7 @@ public class Hauptgui {
 	public void beenden(){
 		int wertInt = JOptionPane.showConfirmDialog(null, "Wirklich beenden?", "Beenden", 2);
 		if (wertInt == 0){
+			Log.getInstance().getLogger().info("Programm wurde beendet");
 			System.exit(0);
 		}
 	}
@@ -157,7 +158,8 @@ public class Hauptgui {
             e.printStackTrace(); 
         } catch (URISyntaxException e) { 
             e.printStackTrace(); 
-        } 
+        }
+        Log.getInstance().getLogger().info("Forum mit Projektinfos geöffnet.");
     } 
 	
 	//Laden der gespeicherten Modertoren-Daten
@@ -176,7 +178,7 @@ public class Hauptgui {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-			System.out.println("Daten wurden geladen von File: " + selectedFile.getAbsolutePath());
+			Log.getInstance().getLogger().info("Daten wurden geladen von File: " + selectedFile.getAbsolutePath());
 		}
 	}
 	
@@ -195,7 +197,7 @@ public class Hauptgui {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("Daten wurden abgespeichert in File: " + saveFile.getAbsolutePath());
+			 Log.getInstance().getLogger().info("Daten wurden abgespeichert in File: " + saveFile.getAbsolutePath());
 		 }
 	}
 }

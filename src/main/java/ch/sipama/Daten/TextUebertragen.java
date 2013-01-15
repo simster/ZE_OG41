@@ -4,10 +4,13 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 /**
- * @author     dreyepat
+ * @author dreyepat
  */
+
 public class TextUebertragen
 {
+	
+	//Instanzvariable
     private Scanner scanner;
 
     public TextUebertragen() {

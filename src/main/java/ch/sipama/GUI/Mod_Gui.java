@@ -7,9 +7,12 @@ import java.awt.event.ActionListener;
 import java.util.Vector;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-
 import ch.sipama.Daten.ModListe;
 import ch.sipama.Funktionen.Log;
+
+/**
+ * @author simster
+ */
 
 public class Mod_Gui extends JPanel {
 
@@ -51,7 +54,7 @@ public class Mod_Gui extends JPanel {
 		}
 
 
-
+		//Tabelle aus der DefaultModel-Tabelle erstellen und einer Scrollpane hinzufügen
 		modTab = new JTable(model);
 		modTab.setPreferredScrollableViewportSize(new Dimension(500,300));
 		modTab.setLayout(new FlowLayout());
@@ -61,7 +64,7 @@ public class Mod_Gui extends JPanel {
 
 
 
-		//Liste dem GUI hinzufügen
+		//Scrollpane dem GUI hinzufügen
 		this.add(scrollPane);
 
 
@@ -74,14 +77,6 @@ public class Mod_Gui extends JPanel {
 			}
 		});
 
-		JButton btnBearbeiten = new JButton("Bearbeiten");
-		btnBearbeiten.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e){
-				modEditieren();
-			}
-		});
-
 		btnLoeschen = new JButton("Löschen");
 		btnLoeschen.addActionListener(new ActionListener(){
 			@Override
@@ -90,17 +85,15 @@ public class Mod_Gui extends JPanel {
 			}
 		});
 
+
 		//Buttons dem Gui hinzufügen
-		this.add(btnBearbeiten);
 		this.add(btnHinzufuegen);
 		this.add(btnLoeschen);
+
 
 		//Elemente im Fenster platzieren
 		layout.putConstraint(SpringLayout.EAST, btnHinzufuegen, -5, SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.SOUTH, btnHinzufuegen, -5, SpringLayout.SOUTH, this);
-
-		layout.putConstraint(SpringLayout.EAST, btnBearbeiten, -5, SpringLayout.WEST, btnHinzufuegen);
-		layout.putConstraint(SpringLayout.SOUTH, btnBearbeiten, -5, SpringLayout.SOUTH, this);
 
 		layout.putConstraint(SpringLayout.WEST, btnLoeschen, 5, SpringLayout.WEST, this);
 		layout.putConstraint(SpringLayout.SOUTH, btnLoeschen, -5, SpringLayout.SOUTH, this);
@@ -114,15 +107,8 @@ public class Mod_Gui extends JPanel {
 	//Neuen Mod der ModListe hinzufügen
 	public void modErfassen(){
 		new NeuerMod(Mod_Gui.this);
-
-
-
 	}
 
-	//Daten eines existierenden Mods bearbeiten
-	public void modEditieren(){
-
-	}
 
 	//Daten eines Mods löschen
 	public void modLoeschen(){
@@ -164,8 +150,6 @@ public class Mod_Gui extends JPanel {
 			loeschenAbbrechen();
 		}
 
-
-
 	}
 
 
@@ -182,7 +166,8 @@ public class Mod_Gui extends JPanel {
 				"Warnung",                                       
 				JOptionPane.WARNING_MESSAGE);
 	}
-	
+
+	//Getter für das DefaultTableModel
 	public DefaultTableModel getModel(){
 		return model;
 	}

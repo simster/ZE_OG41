@@ -1,20 +1,21 @@
 package ch.sipama.ZE_OG41;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
+
 /**
+ * @author dreyepat
  * Unit test for simple App.
  */
 public class AppTest 
 {
-    /**
-     * Rigourous Test :-)
-     */
-    @Test
+	
+	//Anwendungsstart testen
+	@Test
     public void testApp()
     {
-        assertTrue( true );
+       new App();
     }
 }
+
+

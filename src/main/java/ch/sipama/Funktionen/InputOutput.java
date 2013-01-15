@@ -10,6 +10,10 @@ import java.util.List;
 import ch.sipama.Daten.ModListe;
 import ch.sipama.Daten.Moderator;
 
+/**
+ * @author simster
+ */
+
 public class InputOutput {
 
 	//Instanzvariablen
@@ -25,11 +29,9 @@ public class InputOutput {
 
 	//Objekt serialisieren
 	public void serialize() throws IOException {
-		// create output streams
 		FileOutputStream fos = new FileOutputStream(pfad);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		
-		// write file and close the stream afterwards
 		oos.writeObject(serobj);
 		oos.close();
 	}
@@ -37,14 +39,14 @@ public class InputOutput {
 	
 	public List<Moderator> deserialize() throws IOException, ClassNotFoundException {
 		
-		// creates the file input and the object input stream
+		//File- und Objekt-Inputstream erstellen
 		FileInputStream fis = new FileInputStream(pfad);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		
-		// read object from file and save it in serobj
+		//serialisiertes Objekt erstellen
 		serobj = (List<Moderator>) ois.readObject();
 		
-		// close stream and return object
+		//Stream schliessen und Objekt zurückgeben
 		ois.close();
 		return serobj;
 	}

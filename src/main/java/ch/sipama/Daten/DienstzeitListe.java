@@ -3,8 +3,13 @@ package ch.sipama.Daten;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Marco
+ */
+
 public class DienstzeitListe {
 	
+	//Instanzvariablen
 	private static DienstzeitListe instance = null;
 	private List<Dienstzeit> dienstzeitListe;
 	
@@ -25,6 +30,7 @@ public class DienstzeitListe {
 			return instance;
 		}
 
+		
 	//Getter und Setter für die Dienstzeitliste
 		public List<Dienstzeit> getDienstzeitListe() {
 			return dienstzeitListe;

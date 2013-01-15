@@ -1,10 +1,8 @@
 package ch.sipama.GUI;
 
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -12,25 +10,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
-
 import ch.sipama.Daten.ModListe;
 import ch.sipama.Daten.Moderator;
+import ch.sipama.Funktionen.Log;
 
 public class NeuerMod extends JPanel{
 	
 	/**
-	 * 
+	 * @author simster
 	 */
-	private static final long serialVersionUID = 1L;
-
-	//Instanzvariablen
-	private final Mod_Gui modObject;
 	
+	//Instanzvariablen
+	private static final long serialVersionUID = 1L;
 	private JTextField txtName;
 	private JTextField txtForenname;
 	private JTextField txtSkypename;
 	private JTextField txtServer;
-	
 	private JButton btnSave;
 	private JButton btnAbbrechen;
 	private JButton btnBereinigen;
@@ -39,9 +34,6 @@ public class NeuerMod extends JPanel{
 	//Konstruktor: neues Dialogfenster öffnen
 	public NeuerMod( final Mod_Gui modObject){
 		
-		//Dialogfenster mit dem Moderator-Tab verknüpfen
-		this.modObject=modObject;
-			
 		//Dialogfenster erstellen
 		final JDialog neuerMod = new JDialog();
 		neuerMod.setTitle("Neuen Moderator erfassen");
@@ -96,6 +88,7 @@ public class NeuerMod extends JPanel{
 				ModListe.getInstance().getModListe().add(modNeu);
 				Vector<String> zeile = new Vector<String>();
 				int size = (ModListe.getInstance().getModListe().size()-1);
+				Log.getInstance().getLogger().info("Moderator " + ModListe.getInstance().getModListe().get(size).getName() + " wurde hinzugefügt!");
 				zeile.add("" + (size+1));
 				zeile.add(ModListe.getInstance().getModListe().get(size).getServer());
 				zeile.add(ModListe.getInstance().getModListe().get(size).getName());
@@ -157,27 +150,14 @@ public class NeuerMod extends JPanel{
 		layout.putConstraint(SpringLayout.EAST, btnAbbrechen, -5, SpringLayout.WEST, btnSave);
 		layout.putConstraint(SpringLayout.NORTH, btnAbbrechen, 220, SpringLayout.SOUTH, this);
 
-
 		
-		
-		
-		
-		
+		//Weitere Fensteroptionen
 		neuerMod.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		neuerMod.setBounds(250, 300, 480, 300);
-		neuerMod.setMinimumSize(new Dimension(480, 300));
+		neuerMod.setResizable(false);
 		neuerMod.setVisible(true);
-		
-		
-		
-		
-		
-			
-		
+
 	}
-	
-	
-	
 	
 
 }

@@ -7,6 +7,10 @@ import java.net.URL;
 
 import ch.sipama.Funktionen.Log;
 
+/**
+ * @author dreyepat
+ */
+
 public class URLAuslesen {
 	
 	//Methode zum Auslesen des Quelltextes und auf der Konsole ausgeben

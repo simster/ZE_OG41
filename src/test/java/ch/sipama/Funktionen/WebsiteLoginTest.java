@@ -1,8 +1,10 @@
 package ch.sipama.Funktionen;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+
+/**
+ * @author dreyepat
+ */
 
 public class WebsiteLoginTest {
 

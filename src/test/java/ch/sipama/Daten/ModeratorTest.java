@@ -3,8 +3,13 @@ package ch.sipama.Daten;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+/**
+ * @author  simster
+ */
+
 public class ModeratorTest {
 	
+	//Instanzvariable
 	private Moderator testMod;
 	
 	

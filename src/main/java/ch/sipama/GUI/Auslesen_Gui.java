@@ -3,8 +3,6 @@ package ch.sipama.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
-import ch.sipama.Funktionen.WebsiteLogin;
 import ch.sipama.Pattern.URLAuslesen;
 import ch.sipama.Pattern.URLAuslesenArea;
 import ch.sipama.Pattern.URLAuslesenFile;
@@ -118,6 +116,8 @@ public class Auslesen_Gui extends JPanel {
 
 	}
 	
+	
+	//Methoden der verschiedenen Auslesearten aufrufen
 	public void auslesen() throws Exception {
 		
 		urlAuslesen.auslesen();

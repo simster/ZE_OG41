@@ -9,6 +9,10 @@ import java.net.URL;
 
 import ch.sipama.Funktionen.Log;
 
+/**
+ * @author dreyepat
+ */
+
 public class URLAuslesenFile {
 	
 	private String zeit;

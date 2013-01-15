@@ -4,13 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
+/**
+ * @author  simster
+ */
 
 public class DienstzeitTest {
 	
+	//Instanzvariable
 	private Dienstzeit testDienstzeit;
 	
 	
+	//Erstellen eines Objekts dieser Klasse testen
 	@Test
 	public void dienstzeitClassTest(){
 		testDienstzeit = new Dienstzeit(1234, 3456, ModListe.getInstance().getModListe().get(0));
@@ -30,6 +34,7 @@ public class DienstzeitTest {
 		
 	}
 	
+	//Setter-Methoden testen
 	@Test
 	public void methodenTest(){
 		

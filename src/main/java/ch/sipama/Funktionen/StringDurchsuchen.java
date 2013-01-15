@@ -15,10 +15,11 @@ public class StringDurchsuchen {
 
 	// Pfad muss noch mit Patrizia bestimmt werden
 	final static String urlString = ("C:/Users/marcolamm/Documents/GitHub/ZE_OG41/docs/quelltexte/quelltext.txt");
+	private BufferedReader bReader;
 
 	public void attributeAuslesen() throws FileNotFoundException {
 		try {
-			BufferedReader bReader = new BufferedReader(new FileReader(
+			bReader = new BufferedReader(new FileReader(
 					urlString));
 
 			String sZeile = bReader.readLine();

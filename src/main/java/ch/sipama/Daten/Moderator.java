@@ -2,6 +2,10 @@ package ch.sipama.Daten;
 
 import java.io.Serializable;
 
+/**
+ * @author simster
+ */
+
 public class Moderator implements Serializable{
 	
 	//Instanzvariablen

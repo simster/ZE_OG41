@@ -16,44 +16,18 @@ import java.net.URLConnection;
 
 public class StringDurchsuchen {
 
-	// Pfad muss noch mit Patrizia bestimmt werden
-
-	// while ( ( strLine = br.readLine() ) != null)
-	// System.out.println(strLine);
-	// br.close();
-
-	// final static String urlString =
-	// ("C:/Users/marcolamm/Documents/GitHub/ZE_OG41/docs/quelltexte/quelltext.txt");
-	// final static String urlString =
-	// ("https://github.com/simster/ZE_OG41/blob/master/docs/quelltexte/quelltext.txt");
-
 	public void attributeAuslesen() {
-		URL llll = null;
 
 		try {
-			llll = new URL(
-					"http://github.com/simster/ZE_OG41/blob/master/docs/quelltexte/quelltext.txt");
-		} catch (MalformedURLException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		URLConnection conLLL = null;
-		try {
-			conLLL = llll.openConnection();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
+			URL llll = new URL(
+					"https://github.com/simster/ZE_OG41/blob/master/docs/quelltexte/quelltext.txt");
+
+			URLConnection conLLL = llll.openConnection();
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					conLLL.getInputStream()));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String urlString = "";
+			String urlString = "";
+			// br.close();
 
-		try {
 			BufferedReader bReader = new BufferedReader(new FileReader(
 					urlString));
 
@@ -67,9 +41,10 @@ public class StringDurchsuchen {
 					System.out.println("Enthält gesuchten String NICHT!");
 				}
 			}
+			br.close();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-	}
 
+	}
 }

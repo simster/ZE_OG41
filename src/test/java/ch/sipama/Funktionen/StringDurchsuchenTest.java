@@ -7,14 +7,9 @@ import org.junit.*;
 public class StringDurchsuchenTest {
 
 	@Test
-	public void stringDurchsuchenErstellen() {
+	public void stringDurchsuchenErstellen() throws FileNotFoundException {
 		StringDurchsuchen durchsuchen = new StringDurchsuchen();
-//		try {
-//			durchsuchen.attributeAuslesen();
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		durchsuchen.attributeAuslesen();
 
 	}
 

@@ -182,6 +182,10 @@ public class Mod_Gui extends JPanel {
 				"Warnung",                                       
 				JOptionPane.WARNING_MESSAGE);
 	}
+	
+	public DefaultTableModel getModel(){
+		return model;
+	}
 
 
 }

@@ -3,6 +3,7 @@ package ch.sipama.GUI;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -12,6 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import ch.sipama.Daten.ModListe;
+import ch.sipama.Daten.Moderator;
+
 public class NeuerMod extends JPanel{
 	
 	/**
@@ -20,7 +24,7 @@ public class NeuerMod extends JPanel{
 	private static final long serialVersionUID = 1L;
 
 	//Instanzvariablen
-	private Mod_Gui modObject;
+	private final Mod_Gui modObject;
 	
 	private JTextField txtName;
 	private JTextField txtForenname;
@@ -33,7 +37,7 @@ public class NeuerMod extends JPanel{
 	
 	
 	//Konstruktor: neues Dialogfenster öffnen
-	public NeuerMod(Mod_Gui modObject){
+	public NeuerMod( final Mod_Gui modObject){
 		
 		//Dialogfenster mit dem Moderator-Tab verknüpfen
 		this.modObject=modObject;
@@ -88,9 +92,17 @@ public class NeuerMod extends JPanel{
 		btnSave.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
+				Moderator modNeu= new Moderator(txtName.getText(), txtForenname.getText(), txtSkypename.getText(), txtServer.getText());
+				ModListe.getInstance().getModListe().add(modNeu);
+				Vector<String> zeile = new Vector<String>();
+				int size = (ModListe.getInstance().getModListe().size()-1);
+				zeile.add("" + (size+1));
+				zeile.add(ModListe.getInstance().getModListe().get(size).getServer());
+				zeile.add(ModListe.getInstance().getModListe().get(size).getName());
+				zeile.add(ModListe.getInstance().getModListe().get(size).getForennick());
+				zeile.add(ModListe.getInstance().getModListe().get(size).getSkypenick());	
+				modObject.getModel().addRow(zeile);
+				neuerMod.dispose();
 			}
 			
 		});

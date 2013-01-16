@@ -3,6 +3,7 @@ package ch.sipama.Daten;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -18,6 +19,7 @@ public class TextUebertragenTest {
 		textUebert = new TextUebertragen();
 	}
 
+	@Ignore
 	@Test
     public void testGibEingabe() {
     	assertEquals(textUebert.gibEingabe(), "test, text");
